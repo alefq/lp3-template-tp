@@ -109,14 +109,8 @@ public class PersonaServiceImpl implements PersonaService {
 	 */
 	@Override
 	public Persona findByCedula(int cedula) {
-		Iterator<Persona> iteratorPersonas = personaRepository.findAll().iterator();
-		while (iteratorPersonas.hasNext()) {
-			Persona actual = iteratorPersonas.next();
-			if (cedula == actual.getNumeroCedula()) {
-				return actual;
-			}
-		}
-		return null;
+		Persona persona = personaRepository.findByNumeroCedula(cedula);		
+		return persona;
 	}
 
 	/*

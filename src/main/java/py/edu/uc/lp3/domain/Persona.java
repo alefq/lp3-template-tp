@@ -21,8 +21,8 @@ public class Persona implements Serializable {
 	private String sexo;
 	private String apellido;
 	
-	private int edad;
-	private int numeroCedula;
+	private Integer edad;
+	private Integer numeroCedula;
 	public static final String NACIONALIDAD = "Paraguayo";
 
 	public Persona() {
@@ -30,20 +30,20 @@ public class Persona implements Serializable {
 
 	}
 
-	public Persona(String nombre, String apellido, int edad) {
+	public Persona(String nombre, String apellido, Integer edad) {
 		
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.edad = edad;
 	}
 
-	public Persona(int numeroCedula, String nombre) {
+	public Persona(Integer numeroCedula, String nombre) {
 		super();
 		this.nombre = nombre;
 		this.numeroCedula = numeroCedula;
 	}
 
-	public Persona(String nombre2, String apellido2, int edad2, int nroCedula) {
+	public Persona(String nombre2, String apellido2, Integer edad2, Integer nroCedula) {
 		this(nombre2, apellido2, edad2);
 		setNumeroCedula(nroCedula);
 	}
@@ -65,19 +65,19 @@ public class Persona implements Serializable {
 		this.apellido = apellido;
 	}
 
-	public int getEdad() {
+	public Integer getEdad() {
 		return edad;
 	}
 
-	public void setEdad(int edad) {
+	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
 
-	public int getNumeroCedula() {
+	public Integer getNumeroCedula() {
 		return numeroCedula;
 	}
 
-	public void setNumeroCedula(int numeroCedula) {
+	public void setNumeroCedula(Integer numeroCedula) {
 		this.numeroCedula = numeroCedula;
 	}
 	public long getId() {
