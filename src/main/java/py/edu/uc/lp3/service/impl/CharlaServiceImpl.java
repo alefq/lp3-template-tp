@@ -38,7 +38,9 @@ public class CharlaServiceImpl implements CharlaService {
 
 	@Override
 	public Charla crearCharla(String nombre, String hora) {
-		return new Charla(nombre, hora);
+		Charla nuevaCharla = new Charla(nombre, hora);
+		charlaRepository.save(nuevaCharla);
+		return nuevaCharla;
 	}
 
 	@Override
