@@ -2,7 +2,9 @@ package py.edu.uc.lp3.service;
 
 import java.util.List;
 
-import py.edu.uc.lp3.domain.Video;
+import py.edu.uc.lp3.content.Video;
+
+
 
 public interface VideoService {
 

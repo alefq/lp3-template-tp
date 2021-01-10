@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import py.edu.uc.lp3.domain.Video;
+import py.edu.uc.lp3.content.Video;
 import py.edu.uc.lp3.repository.VideoRepository;
 import py.edu.uc.lp3.service.VideoService;
 

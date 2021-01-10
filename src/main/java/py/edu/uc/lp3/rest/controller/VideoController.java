@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import py.edu.uc.lp3.domain.Video;
+import py.edu.uc.lp3.content.Video;
 import py.edu.uc.lp3.service.VideoService;
 
 @RestController
