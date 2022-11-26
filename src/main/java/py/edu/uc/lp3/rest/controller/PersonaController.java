@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import py.edu.uc.lp3.constants.ApiPaths;
 import py.edu.uc.lp3.domain.Persona;
-import py.edu.uc.lp3.service.impl.PersonaServiceImpl;
+import py.edu.uc.lp3.service.PersonaService;
 import py.edu.uc.lp3exceptions.InscripcionException;
 
 @RestController
@@ -22,7 +22,7 @@ public class PersonaController {
 	// Simulamos el design pattern de Controller-Service-Data_Access
 	// típico de aplicaciones basadas en el framework Spring
 	@Autowired
-	private PersonaServiceImpl personaService;// = PersonaService.buildInstance();
+	private PersonaService personaService;// = PersonaService.buildInstance();
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public Persona greetings(@PathVariable("id") Long id) {

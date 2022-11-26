@@ -3,6 +3,7 @@ package py.edu.uc.lp3.service.impl;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import py.edu.uc.lp3.constants.Contacto;
 import py.edu.uc.lp3.domain.Persona;
 import py.edu.uc.lp3.repository.PersonaRepository;
 import py.edu.uc.lp3.service.PersonaService;
+import py.edu.uc.lp3exceptions.GeneralLP3Exception;
 import py.edu.uc.lp3exceptions.InscripcionException;
 
 @Service
@@ -25,7 +27,13 @@ public class PersonaServiceImpl implements PersonaService {
 	 */
 	@Override
 	public Persona findById(Long id) {
-		Persona persona = personaRepository.findById(id).get();
+		Persona persona = null;
+		Optional<Persona> personaFromBD = personaRepository.findById(id);
+		if (personaFromBD.isPresent()) {
+			persona = personaFromBD.get();
+		} else {
+			throw new GeneralLP3Exception("No se encontró la persona con id: " + id);
+		}
 		return persona;
 	}
 
@@ -109,7 +117,7 @@ public class PersonaServiceImpl implements PersonaService {
 	 */
 	@Override
 	public Persona findByCedula(int cedula) {
-		Persona persona = personaRepository.findByNumeroCedula(cedula);		
+		Persona persona = personaRepository.findByNumeroCedula(cedula);
 		return persona;
 	}
 
